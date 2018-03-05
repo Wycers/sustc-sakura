@@ -1,0 +1,9 @@
+{
+    "step1": {
+        "title": "登陆CAS",
+        "username": "学号",
+        "password": "密码",
+        "signin": "登录",
+        "indication": "Wycer.cn 使用 https 保护你的个人信息。我们不会收集你的个人信息。"
+    }
+}

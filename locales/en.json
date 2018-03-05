@@ -1,0 +1,22 @@
+{
+    "description": "Sakura can export your class schedule to an ics file so that you can check your class schedule in any calendar application. Designed for SUSTech students.",
+    "step1": {
+        "title": "Sign in CAS",
+        "username": "Student ID",
+        "username-notnum": "Student ID has to be number!",
+        "username-required": "Student ID is requried",
+        "password": "Password",
+        "password-required": "Password is requried",
+        "submit": "Sign in",
+        "indication": "Wycer.cn uses https to protect your personal information. We would not collect anything."
+    },
+    "step2": {
+        "title": "Choose a week"
+    },
+    "step3": {
+        "title": "Download file"
+    },
+    "footer": {
+        "copyright": "Wycer.cn All Rights Reserved"
+    }
+}
