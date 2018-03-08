@@ -8,7 +8,8 @@ export const mutations = {
     const locales_ = ['en', 'zh-cmn-Hans', 'zh-cmn-Hant']
     const index = state.locales.indexOf(locale)
     if (index !== -1) {
-      state.locale = locales_(index)
+      state.locale = locales_[index]
+      console.log(state.locale)
     }
   }
 }

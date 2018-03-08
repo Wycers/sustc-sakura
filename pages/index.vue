@@ -1,42 +1,30 @@
 <template lang="pug">
-  v-layout(column justify-center align-center fluid)
-    v-flex(xs10 sm10 md10)
-      v-stepper.ma-5(v-model="step")
-        v-stepper-header
-          v-stepper-step.stepper-title(step="1" :complete="step > 0") {{ $t('step1.title') }}
-          v-divider
-          v-stepper-step.stepper-title(step="2" :complete="step > 1") {{ $t('step2.title') }}
-          v-divider
-          v-stepper-step.stepper-title(step="3") {{ $t('step3.title') }}
-        v-stepper-items.ma-4
-          v-stepper-content(step="1")
-            div.content {{ $t('description') }}
-            v-form(ref="loginform")
-              v-text-field(
-                :label="$t('step1.username')"
-                :rules="usernameRules"
-                requried
-              )
-              v-text-field(
-                :label="$t('step1.password')"
-                :rules="passwordRules"
-                type="password"
-                requried
-              )
-              div.content {{ $t('step1.indication') }}
-              v-btn(
-                color="primary"
-                :loading="loading1"
-                @click.native="login"
-                :disabled="loading1"
-              ) {{ $t('step1.submit') }}
-                
-          v-stepper-content(step="2")
-            v-form(ref="requestform")
-              
-          v-stepper-content(step="3")
-            v-card
-              div 233
+  v-stepper.ma-3(v-model="step" vertical)
+    v-stepper-step.stepper-title(step="1" :complete="step > 0") {{ $t('step1.title') }}
+    v-stepper-content(step="1")
+      div.content {{ $t('description') }}
+      v-form(ref="loginform")
+        v-text-field(
+          :label="$t('step1.username')"
+          :rules="usernameRules"
+          requried
+        )
+        v-text-field(
+          :label="$t('step1.password')"
+          :rules="passwordRules"
+          type="password"
+          requried
+        )
+        div.content {{ $t('step1.indication') }}
+        v-btn(
+          color="primary"
+          :loading="loading"
+          @click.native="login"
+          :disabled="loading"
+        ) {{ $t('step1.submit') }}  
+    v-stepper-step.stepper-title(step="2" :complete="step > 1") {{ $t('step2.title') }}  
+    v-stepper-content(step="2")
+      <v-card color="grey lighten-1" class="mb-5" height="200px"></v-card>
         
 </template>
 
@@ -51,8 +39,7 @@ export default {
       passwordRules: [
         (v) => !!v || this.$t('step1.password-required')
       ],
-      loading1: false,
-      loading2: false,
+      loading: false,
       step: 1
     }
   },

@@ -8,8 +8,12 @@
             v-toolbar(card prominent)
               v-toolbar-title(class="headline") {{ title }}
               v-spacer
-              v-btn(icon)
-                v-icon language
+              v-menu(offset-y)
+                v-btn(slot="activator" icon)
+                  v-icon language
+                v-list
+                  v-list-tile(v-for="lang in locales" :key="lang" @click="setlocale(lang)")
+                    v-list-tile-title {{ lang }}
             v-container
               nuxt
     v-content(class="grey lighten-4")
@@ -29,7 +33,17 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
+    methods: {
+      setlocale (locale) {
+        this.$store.commit('SET_LANG', locale)
+        this.$i18n.locale = this.locale
+      }
+    },
+    computed: {
+      ...mapState(['locale', 'locales'])
+    },
     data () {
       return {
         title: 'SUSTech Sakura!',
@@ -49,8 +63,8 @@
 }
 .stepper-title {
   font-family: 'Open Sans';
-  font-size: 1.5em!important;
-  font-weight: 200;
+  font-size: 1.25em!important;
+  font-weight: 100!important;
 }
 .content {
   font-size: 1.35em;
