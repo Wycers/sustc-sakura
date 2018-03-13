@@ -1,6 +1,6 @@
-# sustc-class
+# Sustc-Sakura
 
-> Nuxt.js + Vuetify.js project
+> 基于Vue.js Nuxt.js Vuetify.js的南科大课程表抓取网站
 
 ## Build Setup
 
@@ -18,5 +18,8 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
+之后将静态文件部署到任意一个静态主机即可XD
+
+后端应用请查阅sustc-sakura-spider以及sustc-sakura-console
 
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
