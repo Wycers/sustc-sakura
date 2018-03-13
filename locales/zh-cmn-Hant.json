@@ -1,1 +1,22 @@
-{}
+{
+    "Home": "首頁",
+    "Service": "服務",
+    "About": "關於",
+    "step1": {
+        "description": "Sakura!可以把妳的課程表導出為ics文件以便將課程導入到任何日歷應用。為南科大定制OuO",
+        "title": "登陸CAS",
+        "username": "學號",
+        "username-notnum": "學號必須為數字",
+        "username-required": "學號是必填項目",
+        "password": "密碼",
+        "password-required": "密碼是必填項目",
+        "submit": "登錄",
+        "indication": "Wycer.cn 使用 https 保護妳的個人信息。我們不會收集妳的個人信息。"
+    },
+    "step2": {
+        "title": "下載文件"
+    },
+    "footer": {
+        "copyright": "Wycer.cn 保留所有權利"
+    }
+}
