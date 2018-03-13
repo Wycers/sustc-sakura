@@ -29,10 +29,12 @@ module.exports = {
   /*
   ** Build configuration
   */
+  mode: 'spa',
   build: {
     vendor: [
       '~/plugins/vuetify.js',
-      'vue-i18n'
+      'vue-i18n',
+      'axios'
     ],
     extractCSS: true,
     /*
