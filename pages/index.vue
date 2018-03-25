@@ -28,16 +28,21 @@
         ) {{ $t('step1.submit') }}  
     v-stepper-step.stepper-title(step="2" :complete="step > 2") {{ $t('step2.title') }}  
     v-stepper-content(step="2" style="height: 100%")
-      div.content 目前没有选择= =只能下载当前周的课表
+      div.content {{ week }}
       v-btn(
         color="primary"
         @click.native="download()"
       ) {{ $t('step2.submit')}}
+      v-btn(
+        color="primary"
+        @click.native="step = 1"
+      ) {{ $t('step2.back')}}
         
 </template>
 
 <script>
 import axios from 'axios'
+import moment from 'moment'
 axios.create({
   timeout: 5000,
   withCredentials: true // 允许携带cookie
@@ -70,6 +75,9 @@ export default {
         case 'lg': return 'ma-3'
         case 'xl': return 'ma-4'
       }
+    },
+    week () {
+      return `${this.$t('step2.week1')} ${moment().week() - 8} ${this.$t('step2.week2')}`
     }
   },
   methods: {
