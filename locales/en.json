@@ -18,7 +18,10 @@
     },
     "step2": {
         "title": "Download file",
-        "submit": "Download"
+        "submit": "Download",
+        "back": "Back",
+        "week1": "It's the",
+        "week2": "week of this term"
     },
     "footer": {
         "copyright": "Wycer.cn All Rights Reserved"

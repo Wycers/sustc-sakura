@@ -14,7 +14,9 @@
         "indication": "Wycer.cn 使用 https 保護妳的個人信息。我們不會收集妳的個人信息。"
     },
     "step2": {
-        "title": "下載文件"
+        "title": "下載文件",
+        "submit": "下載",
+        "back": "返回"
     },
     "footer": {
         "copyright": "Wycer.cn 保留所有權利"

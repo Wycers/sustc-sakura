@@ -14,7 +14,11 @@
         "indication": "Wycer.cn 使用 https 保护你的个人信息。我们不会收集你的个人信息。"
     },
     "step2": {
-        "title": "下载文件"
+        "title": "下载文件",
+        "submit": "下载",
+        "back": "返回",
+        "week1": "当前是第",
+        "week2": "个教学周"
     },
     "footer": {
         "copyright": "Wycer.cn 保留所有权利"
