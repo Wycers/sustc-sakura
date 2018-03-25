@@ -40,8 +40,16 @@
         ) {{ $t(link) }}
         </v-btn>
         v-flex(xs12 py-2 text-xs-center white--text)
-          span &copy; 2018 {{ $t('footer.copyright') }}
+          span.mx-3
+            a(href="http://www.miitbeian.gov.cn/") 粤ICP备18027145号
+          span.mx-3 &copy; 2018 {{ $t('footer.copyright') }}
 </template>
+<style>
+a:link {color: white; text-decoration: none} /* 未访问的链接 */
+a:visited {color: white; text-decoration: none}	/* 已访问的链接 */
+a:hover {color: white; text-decoration: underline}	/* 鼠标移动到链接上 */
+a:active {color: white}	/* 选定的链接，即鼠标按下去的时候不松开显示的状态 */
+</style>
 
 <script>
   import { mapState } from 'vuex'
