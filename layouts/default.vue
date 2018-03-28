@@ -44,7 +44,7 @@
             a(href="http://www.miitbeian.gov.cn/") 粤ICP备18027145号
           span.mx-3 &copy; 2018 {{ $t('footer.copyright') }}
 </template>
-<style>
+<style scoped>
 a:link {color: white; text-decoration: none} /* 未访问的链接 */
 a:visited {color: white; text-decoration: none}	/* 已访问的链接 */
 a:hover {color: white; text-decoration: underline}	/* 鼠标移动到链接上 */
