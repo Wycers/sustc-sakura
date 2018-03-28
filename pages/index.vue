@@ -28,15 +28,26 @@
         ) {{ $t('step1.submit') }}  
     v-stepper-step.stepper-title(step="2" :complete="step > 2") {{ $t('step2.title') }}  
     v-stepper-content(step="2" style="height: 100%")
-      div.content {{ week }}
-      v-btn(
-        color="primary"
-        @click.native="download()"
-      ) {{ $t('step2.submit')}}
-      v-btn(
-        color="primary"
-        @click.native="step = 1"
-      ) {{ $t('step2.back')}}
+      div.content {{ weekHint }}
+      v-form(ref="requestform")
+        v-select(
+          :items="weeks"
+          v-model="week"
+          :label="$t('step2.week')"
+          item-text="text"
+          item-value="value"
+          single-line)
+        v-btn(
+          color="primary"
+          :loading="loading"
+          :disabled="loading"
+          @click.native="request"
+        ) {{ $t('step2.submit') }}
+        v-btn(
+          color="primary"
+          @click.native="back"
+        ) {{ $t('step2.back')}}  
+      
         
 </template>
 
@@ -47,6 +58,7 @@ axios.create({
   timeout: 5000,
   withCredentials: true // 允许携带cookie
 })
+import download from 'downloadjs'
 export default {
   data () {
     return {
@@ -63,8 +75,12 @@ export default {
         (v) => this.valid || this.$t('step1.invalid')
       ],
       loading: false,
-      step: 1
+      step: 1,
+      week: 1
     }
+  },
+  mounted () {
+    this.week = moment().week() - 8
   },
   computed: {
     margin () {
@@ -76,18 +92,21 @@ export default {
         case 'xl': return 'ma-4'
       }
     },
-    week () {
-      return `${this.$t('step2.week1')} ${moment().week() - 8} ${this.$t('step2.week2')}`
+    weekHint () {
+      return `${this.$t('step2.week0')} ${this.$t(`ordinal.${moment().week() - 8}`)} ${this.$t('step2.week1')}`
+    },
+    weeks () {
+      var res = []
+      for (var i = 1; i <= 16; ++i) {
+        res.push({
+          text: `${this.$t('step2.week2')} ${this.$t(`ordinal.${i}`)} ${this.$t('step2.week3')}`,
+          value: i
+        })
+      }
+      return res
     }
   },
   methods: {
-    download () {
-      var $form = document.createElement('form')
-      $form.method = 'get'
-      $form.action = '/download'
-      document.body.appendChild($form)
-      $form.submit()
-    },
     async login () {
       if (this.$refs.loginform.validate()) {
         this.loading = true
@@ -146,6 +165,11 @@ export default {
           download(resBlob, res.headers['x-suggested-filename'], 'text/plain')
         }
       }
+    },
+    back () {
+      this.username = ''
+      this.password = ''
+      this.step = 1
     }
   }
 }
