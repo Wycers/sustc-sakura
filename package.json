@@ -5,9 +5,9 @@
   "author": "Wycer <11711918@mail.sustc.edu.cn>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "HOST=127.0.0.1 PORT=2330 nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "HOST=127.0.0.1 PORT=2330 nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {

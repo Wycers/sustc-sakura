@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-stepper(v-model="step" vertical :class="margin" style="height: 100%") 
+  v-stepper(v-model="step" vertical :class="{'ma-0': $vuetify.breakpoint.xs, 'ma-1': $vuetify.breakpoint.sm, 'ma-3': $vuetify.breakpoint.mdAndUp}" style="height: 100%") 
     v-stepper-step.stepper-title(step="1" :complete="step > 1") {{ $t('step1.title') }}
     v-stepper-content(step="1")
       div.content {{ $t('step1.description') }}
@@ -81,20 +81,6 @@ export default {
     this.week = moment().week() - 8
   },
   computed: {
-    margin () {
-      try {
-        switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 'ma-0'
-          case 'sm': return 'ma-1'
-          case 'md': return 'ma-2'
-          case 'lg': return 'ma-3'
-          case 'xl': return 'ma-4'
-        }
-      } catch (err) {
-        console.log(err)
-      }
-      return 'ma-0'
-    },
     weekHint () {
       return `${this.$t('step2.week0')} ${this.$t(`ordinal.${moment().week() - 8}`)} ${this.$t('step2.week1')}`
     },
