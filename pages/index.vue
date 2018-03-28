@@ -108,8 +108,43 @@ export default {
     },
     async request () {
       if (this.$refs.requestform.validate()) {
-        console.log('valid')
-        this.step = 3
+        let res = await axios({
+          method: 'post',
+          url: '/api/download',
+          data: {
+            'week': this.week
+          },
+          responseType: 'blob'
+        })
+
+        let resBlob = res.data
+        let resData = null
+        try {
+          let resText = await new Promise((resolve, reject) => {
+            // 通过 FileReader 接受并解析
+            let reader = new FileReader()
+            reader.addEventListener('abort', reject)
+            reader.addEventListener('error', reject)
+            reader.addEventListener('loadend', () => {
+              resolve(reader.result)
+            })
+            // 文件
+            reader.readAsText(resBlob)
+          })
+          // JSON
+          resData = JSON.parse(resText)
+        } catch (err) {
+          console.log(err)
+        }
+        if (resData) {
+          if (resData.error) {
+            console.log(resData.error)
+          } else {
+            //
+          }
+        } else {
+          download(resBlob, res.headers['x-suggested-filename'], 'text/plain')
+        }
       }
     }
   }
