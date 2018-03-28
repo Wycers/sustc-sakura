@@ -8,17 +8,14 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js + Vuetify.js project' }
+      { hid: 'description', name: 'description', content: 'Gulp your class schedule!' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: [
-    { src: '~/plugins/vuetify.js', ssr: false },
-    { src: '~/plugins/i18n.js', srr: false }
-  ],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/i18n.js'],
   css: [
     '~/assets/style/app.styl'
   ],
@@ -29,15 +26,15 @@ module.exports = {
   /*
   ** Build configuration
   */
-  mode: 'spa',
   build: {
     vendor: [
       '~/plugins/vuetify.js',
       'vue-i18n',
-      'axios'
+      'axios',
+      'moment',
+      'downloadjs'
     ],
     extractCSS: true,
-    ssr: false,
     /*
     ** Run ESLint on save
     */

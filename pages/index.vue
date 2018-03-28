@@ -82,13 +82,18 @@ export default {
   },
   computed: {
     margin () {
-      switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return 'ma-0'
-        case 'sm': return 'ma-1'
-        case 'md': return 'ma-2'
-        case 'lg': return 'ma-3'
-        case 'xl': return 'ma-4'
+      try {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 'ma-0'
+          case 'sm': return 'ma-1'
+          case 'md': return 'ma-2'
+          case 'lg': return 'ma-3'
+          case 'xl': return 'ma-4'
+        }
+      } catch (err) {
+        console.log(err)
       }
+      return 'ma-0'
     },
     weekHint () {
       return `${this.$t('step2.week0')} ${this.$t(`ordinal.${moment().week() - 8}`)} ${this.$t('step2.week1')}`
