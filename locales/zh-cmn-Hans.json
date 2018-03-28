@@ -3,7 +3,7 @@
     "Service": "服务",
     "About": "关于",
     "step1": {
-        "description": "Sakura!可以把你的课程表导出为ics文件以便将课程导入到任何日历应用。为南科大定制OuO",
+        "description": "Sakura! 可以把你的课程表导出为ics文件以便将课程导入到任何日历应用。为南科大定制OuO",
         "title": "登陆CAS",
         "username": "学号",
         "username-notnum": "学号必须为数字",
@@ -11,14 +11,36 @@
         "password": "密码",
         "password-required": "密码是必填项目",
         "submit": "登录",
-        "indication": "Wycer.cn 使用 https 保护你的个人信息。我们不会收集你的个人信息。"
+        "indication": "Wycer.cn 使用 https 保护你的个人信息。我们不会收集你的个人信息。",
+        "invalid": "无效的学号或密码"
     },
     "step2": {
         "title": "下载文件",
         "submit": "下载",
         "back": "返回",
-        "week1": "当前是第",
-        "week2": "个教学周"
+        "week": "周次",
+        "week0": "当前是第",
+        "week1": "个教学周",
+        "week2": "第",
+        "week3": "周"
+    },
+    "ordinal": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12",
+        "13": "13",
+        "14": "14",
+        "15": "15",
+        "16": "16"
     },
     "footer": {
         "copyright": "Wycer.cn 保留所有权利"
