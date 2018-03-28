@@ -10,6 +10,7 @@
           v-model="username"
           v-on:focus="valid = true"
           requried
+          validate-on-blur=true
         )
         v-text-field(
           :label="$t('step1.password')"
@@ -18,6 +19,7 @@
           v-model="password"
           requried
           v-on:focus="valid = true"
+          validate-on-blur=true
         )
         div.content {{ $t('step1.indication') }}
         v-btn(
