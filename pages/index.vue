@@ -54,10 +54,6 @@
 <script>
 import axios from 'axios'
 import moment from 'moment'
-axios.create({
-  timeout: 5000,
-  withCredentials: true // 允许携带cookie
-})
 import download from 'downloadjs'
 export default {
   data () {
