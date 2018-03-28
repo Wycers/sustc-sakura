@@ -16,8 +16,8 @@ module.exports = {
     ]
   },
   plugins: [
-    '~/plugins/vuetify.js',
-    '~/plugins/i18n.js'
+    { src: '~/plugins/vuetify.js', ssr: false },
+    { src: '~/plugins/i18n.js', srr: false }
   ],
   css: [
     '~/assets/style/app.styl'
@@ -37,6 +37,7 @@ module.exports = {
       'axios'
     ],
     extractCSS: true,
+    ssr: false,
     /*
     ** Run ESLint on save
     */
