@@ -28,6 +28,8 @@ module.exports = {
   */
   build: {
     vendor: [
+      'babel-polyfill',
+      'eventsource-polyfill',
       '~/plugins/vuetify.js',
       'vue-i18n',
       'axios',
