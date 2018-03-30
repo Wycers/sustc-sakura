@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "blob.js": "^1.0.1",
     "downloadjs": "^1.4.7",
     "eventsource-polyfill": "^0.9.6",
     "moment": "^2.21.0",

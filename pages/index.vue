@@ -135,10 +135,8 @@ export default {
           url: '/api/download',
           data: {
             'week': this.week
-          },
-          responseType: 'blob'
+          }
         })
-
         let resBlob = res.data
         let resData = null
         try {
@@ -165,7 +163,7 @@ export default {
             //
           }
         } else {
-          download(resBlob, res.headers['x-suggested-filename'], 'text/plain')
+          download(resBlob, res.headers['x-suggested-filename'], 'text/calendar')
         }
       }
     },
